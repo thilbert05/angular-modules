@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myFirstApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Coursera for Angular</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
-    <h1>Hello Coursera Angular Course</h1>
-    <p>It's very exiting</p>
+    <h1>My first AngularJS App</h1>
+    
+    <div ng-controller="MyFirstController">
+        <input type="text" ng-model="name">
+        Inside my input is: {{name}}
+        <br>
+        {{sayHello()}}
+    </div>
 </body>
 </html>

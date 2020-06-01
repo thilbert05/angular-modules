@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myExpressions">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Expressions and Interpolations</title>
+    <style>
+        body{
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expressions and Interpolation Examples</h1>
+        <div ng-controller="MsgController">
+            {{name}} has a message for you:<br>
+            {{sayMessage()}}
+            <div>
+                <button ng-click="feedTomas()">
+                    Feed Tomas
+                </button>
+                <br>
+                <!-- ng-src instead of html src to avoid 404 error of browser rendering the image before AngularJS does -->
+                <img ng-src="images/tomas_{{stateOfBeing}}.png">
+            </div>
+        </div>
+</body>
+</html>
