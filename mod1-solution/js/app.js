@@ -10,7 +10,9 @@
         $scope.message = "";
         $scope.checkItems = function (){
             var string = $scope.input.split(", ");
-            string = string.filter(Boolean);
+            // string = string.filter(Boolean);
+            string = string.filter(function(entry) { return entry.trim() != ''; });
+            
             if ($scope.input == "") {
                 $scope.alertClass = 'alert alert-danger';
                 $scope.alertRole = 'alert';
