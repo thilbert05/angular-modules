@@ -16,13 +16,16 @@
     <h1>Expressions and Interpolation Examples</h1>
         <div ng-controller="MsgController">
             {{name}} has a message for you:<br>
-            {{sayMessage()}}
+            Original: {{sayMessage()}} <br>
+            Master: {{sayLearnMessage() | uppercase}} <br>
+            Truth: {{sayLearnMessage() | truth : "to master AngularJS to perfection" : "AngularJS to be easy!" | uppercase}}
             <div>
                 <button ng-click="feedTomas()">
                     Feed Tomas
                 </button>
                 <br>
                 <!-- ng-src instead of html src to avoid 404 error of browser rendering the image before AngularJS does -->
+                The cost of the meal is: {{mealCost | currency}} <br>
                 <img ng-src="images/tomas_{{stateOfBeing}}.png">
             </div>
         </div>

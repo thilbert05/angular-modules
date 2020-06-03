@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingListApp</title>
+</head>
+<body>
+    <h1>Shopping List App</h1>
+
+    <div ng-controller="AddItemController as itemAdder">
+        <input type="text" ng-model="itemAdder.itemName" placeholder="Item Name">
+        <input type="text" ng-model="itemAdder.itemQuantity" placeholder="Item Quantity">
+        <button ng-click="itemAdder.addItem()">Add Item to List</button>
+    </div>
+
+    <div ng-controller="ShowItemController as showItem">
+        <ol ng-repeat="item in showItem.items">
+            <li> 
+                {{item.quantity}} of {{item.name}}  
+                <button ng-click="showItem.removeItem($index)">Remove Item</button>
+            </li>
+           
+        </ol>
+
+    </div>
+    
+</body>
+</html>
