@@ -14,7 +14,7 @@
         itemAdder.itemQuantity = '';
 
         itemAdder.addItem = function () {
-            ShoppingListService.addItem(itemAdder.itemName,itemAdder.itemQuantity,)
+            ShoppingListService.addItem(itemAdder.itemName,itemAdder.itemQuantity)
         };
 
     }
