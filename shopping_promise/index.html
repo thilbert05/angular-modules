@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Shopping List Promise</title>
+</head>
+<body>
+    
+    <div class="container" ng-controller="ShoppingListController as list">
+        <h1>Shopping List with a promise</h1>
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="sr-only" for="itemName">Product Name</label>
+                    <input id="itemName" class="form-control" type="text" placeholder="Product Name" ng-model="list.itemName">
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="sr-only" for="quantity">Quantity</label>
+                    <input id="quantity" class="form-control" type="text" placeholder="Enter Quantity" ng-model="list.itemQuantity">
+                </div>
+                <span class="align-middle">Boxes</span>
+                <div class="form-group col-md">
+                    <button class="btn btn-success" type="submit" ng-click="list.addItem();">Add item</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-md-6">
+                <ol>
+                    <li ng-repeat="item in list.items">{{item.quantity}} boxes of {{item.name}} <button class="btn btn-warning" type="reset" ng-click="list.removeItem($index);">Remove Item</button></li>
+                    
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
